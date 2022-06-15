@@ -101,7 +101,7 @@ namespace Practica_new.Controllers
             return View();
         }
 
-        
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdRam,NameRam,Brand,Price,AmountMemoryRam,TypeMemoryRam,NumbersModulesRam")] Ram ram)
         {

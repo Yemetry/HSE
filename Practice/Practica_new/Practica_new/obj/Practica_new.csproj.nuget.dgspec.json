@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\Practica_new\\Practica_new\\Practica_new.csproj": {}
+    "C:\\Users\\user\\Documents\\GitHub\\HSE\\Practice\\Practica_new\\Practica_new\\Practica_new.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\Practica_new\\Practica_new\\Practica_new.csproj": {
+    "C:\\Users\\user\\Documents\\GitHub\\HSE\\Practice\\Practica_new\\Practica_new\\Practica_new.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\Practica_new\\Practica_new\\Practica_new.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\HSE\\Practice\\Practica_new\\Practica_new\\Practica_new.csproj",
         "projectName": "Practica_new",
-        "projectPath": "C:\\Users\\user\\source\\repos\\Practica_new\\Practica_new\\Practica_new.csproj",
+        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\HSE\\Practice\\Practica_new\\Practica_new\\Practica_new.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\Practica_new\\Practica_new\\obj\\",
+        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\HSE\\Practice\\Practica_new\\Practica_new\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

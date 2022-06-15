@@ -28,16 +28,18 @@
 <input type="submit" value="Отчет" />
 }
 </div>
-
 <p>
-    <a href="Create" class="btn btn-light btn-lg btn-block" data-toggle="tooltip" data-placement="top" title="Добавить оперативную память" >+</a>
+    <a asp-action="Create">Create New</a>
+</p>
+<p>
+    <a href="~/Rams/Create" class="btn btn-light btn-lg btn-block" data-toggle="tooltip" data-placement="top" title="Добавить оперативную память" >+</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.NameRam)
-            </th>
+            </th> 
             <th>
                 @Html.DisplayNameFor(model => model.Brand)
             </th>

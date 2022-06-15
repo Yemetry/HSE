@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T3kfrdE47M7tfEnYsximx+Ky/c7t9dAPpvy+/Gr2JgnjykH8Sg7GQTbc3DFIdhQ1YGCw52+cz+SZDzTY8bZ+aA==",
+  "dgSpecHash": "+NafnAKlgVbLD8KoUGUDdpEneHBdxs+QiS4O0n9zfdE6EDYaNwjOrRXgOCZMlT6itOc1ERFkMa0o1PLih5T28g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\repos\\Practica_new\\Practica_new\\Practica_new.csproj",
+  "projectFilePath": "C:\\Users\\user\\Documents\\GitHub\\HSE\\Practice\\Practica_new\\Practica_new\\Practica_new.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
