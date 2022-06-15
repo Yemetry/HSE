@@ -1,0 +1,70 @@
+﻿@model Practica_new.Models.Ram
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Изменение</h1>
+
+<h4>Оперативной памяти</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdRam" />
+            <div class="form-group">
+                <label asp-for="NameRam" class="control-label"></label>
+                <input asp-for="NameRam" class="form-control" />
+                <span asp-validation-for="NameRam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountMemoryRam" class="control-label"></label>
+                <select asp-for="AmountMemoryRam" class="form-control" asp-items="ViewBag.AmountMemoryRam"></select>
+                <span asp-validation-for="AmountMemoryRam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeMemoryRam" class="control-label"></label>
+                <select asp-for="TypeMemoryRam" class="form-control" asp-items="ViewBag.TypeMemoryRam"></select>
+                <span asp-validation-for="TypeMemoryRam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumbersModulesRam" class="control-label"></label>
+                <select asp-for="NumbersModulesRam" class="form-control" asp-items="ViewBag.NumbersModulesRam"></select>
+                <span asp-validation-for="NumbersModulesRam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуть к прошлой странице</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+// переопределение валидации на стороне клиента
+$.validator.methods.range = function (value, element, param) {
+var globalizedValue = value.replace(",", ".");
+return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+}
+
+$.validator.methods.number = function (value, element) {
+return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+}
+</script>
+}

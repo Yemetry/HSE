@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Practica_new.Models.Carcass>
+
+@{
+    ViewData["Title"] = "Корпусы";
+}
+
+<h1>Корпус</h1>
+
+<div align="right">
+    <form asp-controller = "Carcasses" asp-action = "Index" method = "post">
+    <table>
+        <tr>
+            <td>
+                 <input name = "Search" width = 1000/>
+
+            </td>
+            <td>
+                    <input type = "submit" value = "Найти"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+
+
+<p>
+    
+    <a href="Create" class="btn btn-light btn-lg btn-block" data-toggle="tooltip" data-placement="top" title="Добавить корпус" >+</a>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameCarcass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotherboardFormFactor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberUsbOutputs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberAudioOutputs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameCarcass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherboardFormFactor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberUsbOutputs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberAudioOutputs)
+            </td>
+            <td>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Carcasses/Edit/@item.IdCarcass">Изменение</a> 
+                <a width = "33%"class="btn btn-outline-primary" role="button" href="~/Carcasses/Details/@item.IdCarcass">Детали</a>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Carcasses/Delete/@item.IdCarcass">Удалить</a>
+                
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

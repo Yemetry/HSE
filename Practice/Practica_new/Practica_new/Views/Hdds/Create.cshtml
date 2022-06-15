@@ -1,0 +1,64 @@
+﻿@model Practica_new.Models.Hdd
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Hdd</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameHdd" class="control-label"></label>
+                <input asp-for="NameHdd" class="form-control" />
+                <span asp-validation-for="NameHdd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpeedDisk" class="control-label"></label>
+                <input asp-for="SpeedDisk" class="form-control" />
+                <span asp-validation-for="SpeedDisk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SizeMemoryHdd" class="control-label"></label>
+                <input asp-for="SizeMemoryHdd" class="form-control" />
+                <span asp-validation-for="SizeMemoryHdd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+// переопределение валидации на стороне клиента
+$.validator.methods.range = function (value, element, param) {
+var globalizedValue = value.replace(",", ".");
+return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+}
+
+$.validator.methods.number = function (value, element) {
+return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+}
+</script>
+}

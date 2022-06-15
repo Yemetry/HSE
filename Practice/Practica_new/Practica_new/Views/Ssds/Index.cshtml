@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Practica_new.Models.Ssd>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div align="right">
+<form asp-controller = "Ssds" asp-action = "Index" method = "post">
+    <table>
+        <tr>
+            <td>
+                 <input name = "Search" width = 1000/>
+
+            </td>
+            <td>
+                    <input type = "submit" value = "Найти"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameSsd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SizeMemorySsd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpeedRecord)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameSsd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeMemorySsd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpeedRecord)
+            </td>
+            <td>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Ssds/Edit/@item.IdSsd">Изменение</a> 
+                <a width = "33%"class="btn btn-outline-primary" role="button" href="~/Ssds/Details/@item.IdSsd">Детали</a>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Ssds/Delete/@item.IdSsd">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

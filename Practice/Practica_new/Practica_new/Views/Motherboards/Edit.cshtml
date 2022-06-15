@@ -1,0 +1,80 @@
+﻿@model Practica_new.Models.Motherboard
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Motherboard</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdMotherboard" />
+            <div class="form-group">
+                <label asp-for="NameMotherboard" class="control-label"></label>
+                <input asp-for="NameMotherboard" class="form-control" />
+                <span asp-validation-for="NameMotherboard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocketProcessor" class="control-label"></label>
+                <input asp-for="SocketProcessor" class="form-control" />
+                <span asp-validation-for="SocketProcessor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberSlotsRam" class="control-label"></label>
+                <input asp-for="NumberSlotsRam" class="form-control" />
+                <span asp-validation-for="NumberSlotsRam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberM2storageSlots" class="control-label"></label>
+                <input asp-for="NumberM2storageSlots" class="form-control" />
+                <span asp-validation-for="NumberM2storageSlots" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chipset" class="control-label"></label>
+                <input asp-for="Chipset" class="form-control" />
+                <span asp-validation-for="Chipset" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormFactor" class="control-label"></label>
+                <input asp-for="FormFactor" class="form-control" />
+                <span asp-validation-for="FormFactor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+// переопределение валидации на стороне клиента
+$.validator.methods.range = function (value, element, param) {
+var globalizedValue = value.replace(",", ".");
+return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+}
+
+$.validator.methods.number = function (value, element) {
+return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+}
+</script>
+}

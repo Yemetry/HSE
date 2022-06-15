@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Practica_new.Models.Ram>
+
+@{
+    ViewData["Title"] = "Оперативная память";
+}
+
+<h1>Оперативная память</h1>
+
+<div align="right">
+<form asp-controller = "Rams" asp-action = "Index" method = "post">
+    <table>
+        <tr>
+            <td>
+                 <input name = "Search" width = 1000/>
+
+            </td>
+            <td>
+                    <input type = "submit" value = "Найти"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+<div align="left">
+
+    @using(Html.BeginForm("Export", "Rams", FormMethod.Post))
+{
+<input type="submit" value="Отчет" />
+}
+</div>
+
+<p>
+    <a href="Create" class="btn btn-light btn-lg btn-block" data-toggle="tooltip" data-placement="top" title="Добавить оперативную память" >+</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameRam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountMemoryRamNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumbersModulesRamNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeMemoryRamNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameRam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountMemoryRamNavigation.AmountMemoryRam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumbersModulesRamNavigation.NumbersModulesRam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeMemoryRamNavigation.TypeMemoryRam)
+            </td>
+            <td>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Rams/Edit/@item.IdRam">Изменение</a> 
+                <a width = "33%"class="btn btn-outline-primary" role="button" href="~/Rams/Details/@item.IdRam">Детали</a>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Rams/Delete/@item.IdRam">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

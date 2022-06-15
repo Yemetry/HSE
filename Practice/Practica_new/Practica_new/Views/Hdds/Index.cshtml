@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Practica_new.Models.Hdd>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div align="right">
+<form asp-controller = "Hdds" asp-action = "Index" method = "post">
+    <table>
+        <tr>
+            <td>
+                 <input name = "Search" width = 1000/>
+
+            </td>
+            <td>
+                    <input type = "submit" value = "Найти"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameHdd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpeedDisk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SizeMemoryHdd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameHdd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpeedDisk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeMemoryHdd)
+            </td>
+            <td>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Hdds/Edit/@item.IdHdd">Изменение</a> 
+                <a width = "33%"class="btn btn-outline-primary" role="button" href="~/Hdds/Details/@item.IdHdd">Детали</a>
+                <a width = "33%" class="btn btn-outline-primary" role="button" href="~/Hdds/Delete/@item.IdHdd">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
