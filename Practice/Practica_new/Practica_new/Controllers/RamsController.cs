@@ -92,7 +92,6 @@ namespace Practica_new.Controllers
             return View(ram);
         }
 
-       
         public IActionResult Create()
         {
             ViewData["AmountMemoryRam"] = new SelectList(_context.SpravAmounts, "Id", "AmountMemoryRam");

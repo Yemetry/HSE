@@ -28,12 +28,11 @@
 <input type="submit" value="Отчет" />
 }
 </div>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<p>
+
+<form>
     <a href="~/Rams/Create" class="btn btn-light btn-lg btn-block" data-toggle="tooltip" data-placement="top" title="Добавить оперативную память" >+</a>
-</p>
+    @*<button type="submit" asp-controller="Rams" asp-action="Create" method="post" value = "Добавить">Добавить</button>*@
+</form>
 <table class="table">
     <thead>
         <tr>

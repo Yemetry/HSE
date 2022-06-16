@@ -34,13 +34,13 @@ namespace Practica_new.Models
         [Required]
         [Display(Name = "Количество модулей оперативной памяти в комплекте")]
         public int NumbersModulesRam { get; set; }
-        [Required]
+        
         [Display(Name = "Количество оперативной памяти в ГБ")]
         public virtual SpravAmount AmountMemoryRamNavigation { get; set; }
-        [Required]
+        
         [Display(Name = "Количество модулей оперативной памяти в комплекте")]
         public virtual SpravRamModul NumbersModulesRamNavigation { get; set; }
-         [Required]
+         
         [Display(Name = "Тип оперативной памяти")]
         public virtual SpravRam TypeMemoryRamNavigation { get; set; }
         public virtual ICollection<Build> Builds { get; set; }
